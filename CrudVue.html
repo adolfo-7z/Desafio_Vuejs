@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="estiloVue.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <div>
+            <h2 id="titulo">Mantenedor de Productos</h2>
+        </div>
+        
+            <div class="formulario">
+                <div class="cabeza-form">
+                    Añadir un producto
+                </div>
+                <div class="cuerpo-form">
+                    <form>
+                        <div class="form-group">
+                            <label id="labels">Nombre:</label>
+                            <input v-model="nombre" @keyup.enter="añadirProducto" id="finput" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label id="labels">Descripción:</label>
+                            <input v-model="descripcion" @keyup.enter="añadirProducto" id="finput" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label id="labels">Precio($):</label>
+                            <input v-model="precio" @keyup.enter="anadirProducto" id="finput" type="number" required>
+                        </div>
+                        <input @click="añadirProducto" value="Añadir" type="button" class="btns">
+                    </form>
+                </div>
+            </div>
+            <div class="contenedor-tabla">
+                <div class="cabeza-tabla">Lista de Productos</div>
+                <div class="cuerpo-tabla">
+                    <table class="tabla">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Precio($)</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(producto, index) in productos">
+                                <td>
+                                    {{ producto.nombre }}
+                                </td>
+                                <td>
+                                    {{ producto.decripcion }}
+                                </td>
+                                <td>
+                                    {{ producto.precio }}
+                                </td>
+                                <td>
+                                    <span v-if="editarForm && editarId == index">
+                                        <button @click="guardarCambios(index)" class="btns">Guardar</button>
+                                    </span>
+                                    <span v-else>
+                                        <button @click="verFormularioEditar(index)" class="btns">Editar</button>
+                                    </span>
+                                </td>
+                                <td>
+                                    <button @click="borrarProducto(index)" class="btns">Borrar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    </div>
+    <script src="codigoVue.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    background-color: white;
+}
+
+.container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#titulo {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: rgb(201, 201, 201) solid 1px;
+}
+
+.formulario {
+    border-radius: 20px;
+    margin: auto; 
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    border: rgb(86, 213, 252) dotted 2px;
+}
+
+.contenedor-tabla {
+    margin: auto;
+    margin-top: 40px;
+    width: 60%;
+}
+
+.cabeza-form {
+    text-align: center;
+}
+
+.cuerpo-form {
+    padding: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin: 5px;
+    padding: 2px;
+    text-align: left;
+}
+
+#finput {
+    display: block;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btns {
+    border-radius: 40px;
+    border: rgb(86, 213, 252) 2px dotted;
+    cursor: pointer;
+    outline: none;
+}
+
+.cabeza-tabla {
+    border: gray 1px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.tabla {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    border: gray 1px solid;
+    padding: 12px;
+    font-weight: 900;
+}
